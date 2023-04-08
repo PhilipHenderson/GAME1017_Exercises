@@ -109,7 +109,7 @@
       <Filter>GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="Ship.h">
-      <Filter>GameObjects</Filter>
+      <Filter>Managers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

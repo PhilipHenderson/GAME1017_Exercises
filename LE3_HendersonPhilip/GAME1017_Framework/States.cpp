@@ -25,7 +25,6 @@ void State::Update()
 		if (STMA::StateChanging()) return;
 	}
 }
-
 void State::Render()
 {
 	for (auto const& i : m_objects)
@@ -34,7 +33,6 @@ void State::Render()
 		return; // If GameState is rendering but PauseState is the current state, return.
 	SDL_RenderPresent(REMA::GetRenderer());
 }
-
 void State::Exit()
 {
 	for (auto& i : m_objects)
@@ -45,12 +43,10 @@ void State::Exit()
 	m_objects.clear();
 	m_objects.shrink_to_fit();
 }
-
 void State::AddChild(std::string key, GameObject* obj)
 {
 	m_objects.push_back(pair<string, GameObject*>(key, obj));
 }
-
 GameObject* State::GetChild(const std::string& key)
 {
 	auto it = std::find_if(m_objects.begin(), m_objects.end(),
@@ -62,7 +58,6 @@ GameObject* State::GetChild(const std::string& key)
 		return it->second;
 	else return nullptr;
 }
-
 void State::RemoveChild(const std::string& key)
 {
 	auto it = std::find_if(m_objects.begin(), m_objects.end(),
@@ -81,7 +76,6 @@ void State::RemoveChild(const std::string& key)
 
 // Begin TitleState.
 TitleState::TitleState() = default;
-
 void TitleState::Enter()
 {
 	cout << "Entering TitleState..." << endl;
@@ -98,19 +92,16 @@ void TitleState::Enter()
 	AddChild("title", new Image({ 0, 0, 800, 156 }, { 112.0f, 100.0f, 800.0f, 156.0f }, "title"));
 	AddChild("play", new PlayButton({ 0, 0, 400, 100 }, { 412.0f, 384.0f, 200.0f, 50.0f }, "play"));
 }
-
 void TitleState::Update()
 {
 	State::Update();
 }
-
 void TitleState::Render()
 {
 	SDL_SetRenderDrawColor(REMA::GetRenderer(), 0, 0, 0, 255);
 	SDL_RenderClear(REMA::GetRenderer());
 	State::Render();
 }
-
 void TitleState::Exit()
 {
 	cout << "Exiting TitleState..." << endl;
@@ -130,7 +121,6 @@ void PauseState::Enter()
 {
 	cout << "Entering PauseState..." << endl;
 }
-
 void PauseState::Update()
 {
 	if (EVMA::KeyPressed(SDL_SCANCODE_R))
@@ -140,7 +130,6 @@ void PauseState::Update()
 	}
 	State::Update();
 }
-
 void PauseState::Render()
 {
 	// First render the GameState
@@ -152,7 +141,6 @@ void PauseState::Render()
 	SDL_RenderFillRect(REMA::GetRenderer(), &rect);
 	State::Render();
 }
-
 void PauseState::Exit()
 {
 	cout << "Exiting PauseState..." << endl;
@@ -162,7 +150,6 @@ void PauseState::Exit()
 
 // Begin GameState.
 GameState::GameState() = default;
-
 void GameState::Enter()
 {
 	cout << "Entering GameState..." << endl;
@@ -182,7 +169,6 @@ void GameState::Enter()
 	AddChild("ship", new Ship({ 0, 0, 100, 100 }, { 462.0f, 334.0f, 100.0f, 100.0f }));
 	AddChild("field", new AsteroidField(8));
 }
-
 void GameState::Update()
 {
 	if (EVMA::KeyPressed(SDL_SCANCODE_X))
