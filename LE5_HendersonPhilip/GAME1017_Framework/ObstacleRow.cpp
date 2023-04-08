@@ -14,7 +14,7 @@ ObstacleRow::ObstacleRow():m_gapCtr(0), m_gapMax(3)
 void ObstacleRow::Update()
 {
 	// When the first obstacle goes completely off-screen.
-	if (m_obstacles[0]->GetPos().x <= 128.0f)
+	if (m_obstacles[0]->GetPos().x <= -128.0f)
 	{
 		//Pop the first obstacle off
 		delete m_obstacles[0];

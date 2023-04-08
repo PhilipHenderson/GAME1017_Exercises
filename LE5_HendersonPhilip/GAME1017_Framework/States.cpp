@@ -5,6 +5,7 @@
 #include "Button3.h"
 #include "ObstacleRow.h"
 #include "Primitives.h"
+#include "ScrollingBackground.h"
 // Remaining managers.
 #include "CollisionManager.h"
 #include "EventManager.h"
@@ -155,6 +156,8 @@ GameState::GameState() = default;
 void GameState::Enter()
 {
 	cout << "Entering GameState..." << endl;
+	TEMA::Load("../Assets/img/Temple.png", "temple");
+	AddChild("background", new ScrollingBackground());
 	AddChild("obstacles", new ObstacleRow());
 }
 
@@ -185,6 +188,7 @@ void GameState::Render()
 void GameState::Exit()
 {
 	cout << "Exiting GameState..." << endl;
+	TEMA::Unload("temple");
 	State::Exit();
 }
 

@@ -67,6 +67,8 @@
     <ClCompile Include="Obstacle.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="ScrollingBackground.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -117,6 +119,8 @@
     <ClInclude Include="Obstacle.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="ScrollingBackground.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Assets\dat\Level1.txt">
