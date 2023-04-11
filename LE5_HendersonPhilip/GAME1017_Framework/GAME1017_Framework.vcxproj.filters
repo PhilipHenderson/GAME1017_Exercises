@@ -67,8 +67,12 @@
     <ClCompile Include="Obstacle.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="Background.cpp" />
-    <ClCompile Include="ScrollingBackground.cpp" />
+    <ClCompile Include="Background.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollingBackground.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -119,8 +123,12 @@
     <ClInclude Include="Obstacle.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="Background.h" />
-    <ClInclude Include="ScrollingBackground.h" />
+    <ClInclude Include="Background.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollingBackground.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Assets\dat\Level1.txt">
@@ -138,6 +146,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\Assets\img\Tiles.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Assets\img\Obstacles.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

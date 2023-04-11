@@ -157,6 +157,7 @@ void GameState::Enter()
 {
 	cout << "Entering GameState..." << endl;
 	TEMA::Load("../Assets/img/Temple.png", "temple");
+	TEMA::Load("../Assets/img/Obstacles.png", "obstacle");
 	AddChild("background", new ScrollingBackground());
 	AddChild("obstacles", new ObstacleRow());
 }
@@ -189,6 +190,7 @@ void GameState::Exit()
 {
 	cout << "Exiting GameState..." << endl;
 	TEMA::Unload("temple");
+	TEMA::Unload("obstacle");
 	State::Exit();
 }
 

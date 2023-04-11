@@ -4,7 +4,7 @@
 
 constexpr int kScrollSpeed = 2;
 
-class Obstacle // Not a GameObject.
+class Obstacle // not a GameObject
 {
 public:
 	Obstacle(const SDL_FRect dst, bool hasImage = false, const SDL_Rect src = {0,0,0,0}, const char* key = "");

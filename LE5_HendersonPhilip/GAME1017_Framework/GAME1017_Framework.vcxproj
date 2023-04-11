@@ -188,6 +188,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Assets\img\button.png" />
+    <Image Include="..\Assets\img\Obstacles.png" />
     <Image Include="..\Assets\img\Player.png" />
     <Image Include="..\Assets\img\Tiles.png" />
   </ItemGroup>
